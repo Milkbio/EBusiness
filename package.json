@@ -1,0 +1,23 @@
+{
+  "name": "EBusiness",
+  "version": "1.0.0",
+  "description": "从0打造电商平台",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Milkbio/EBusiness.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Milkbio/EBusiness/issues"
+  },
+  "homepage": "https://github.com/Milkbio/EBusiness#readme",
+  "devDependencies": {
+    "webpack": "^2.7.0"
+  }
+}
