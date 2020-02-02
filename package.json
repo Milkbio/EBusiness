@@ -40,5 +40,8 @@
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.11.5",
     "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "jquery": "^3.4.1"
   }
 }
