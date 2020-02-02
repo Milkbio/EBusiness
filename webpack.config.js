@@ -1,6 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
-const extractTextWebpackPlugin = require('extract-text-webpack-plugin');
 
 function resolve (dir) {
     return path.join(__dirname, dir);
@@ -13,7 +11,7 @@ module.exports = {
     output: {
         path: resolve('dist'),
         filename: "static/js/[name].js",
-        publicPath: '/'
+        // publicPath: '/'
     },
     resolve: {
         extensions: ['.js', '.json'],

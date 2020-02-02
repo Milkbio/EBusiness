@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const portfinder = require('portfinder');
@@ -25,10 +26,18 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
         new webpack.NoEmitOnErrorsPlugin(),
         new HtmlWebpackPlugin({
-            filename: 'view/index.html',
             template: 'src/view/index.html',
+            filename: 'view/index.html',
             inject: true
         }),
+        // copy custom static assets
+        new CopyWebpackPlugin([
+            {
+                from: path.resolve(__dirname, 'static'),
+                to: 'static',
+                ignore: ['.*']
+            }
+        ])
     ],
     devServer: {
         clientLogLevel: 'warning',
@@ -36,11 +45,11 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         hot: true,
         compress: true,
         host: 'localhost',
-        port: '8888',
+        port: 8888,
         overlay: {warnings: false, errors: true},
-        publicPath: '/',
         // quiet: true,
-        stats: "errors-only"
+        stats: "errors-only",
+        contentBase: './dist'
     },
 });
 
