@@ -21,7 +21,9 @@ module.exports = {
         ],
         alias: {
             '@': resolve('src'),
-            'assets': resolve('src/assets')
+            'assets': resolve('src/assets'),
+            'util': resolve('src/util'),
+            'service': resolve('src/service'),
         }
     },
     module: {
