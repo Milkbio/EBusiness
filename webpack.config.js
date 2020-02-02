@@ -15,7 +15,8 @@ module.exports = {
     },
     output: {
         path: resolve('dist'),
-        filename: "static/js/[name].js"
+        filename: "static/js/[name].js",
+        publicPath: '/'
     },
     resolve: {
         extensions: ['.js', '.json'],
