@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const extractTextWebpackPlugin = require('extract-text-webpack-plugin');
 
 function resolve (dir) {
@@ -40,13 +39,6 @@ module.exports = {
                 }]
             },
             {
-                test: /\.(css|less)$/,
-                loader: extractTextWebpackPlugin.extract({
-                    fallback: 'style-loader',
-                    use: 'css-loader!less-loader'
-                })
-            },
-            {
                 test: /\.(png|jpe?g|gif|svg|woff2?|eot|ttf|otf)(\?.*)?$/,
                 loader: 'url-loader',
                 options: {
@@ -56,32 +48,5 @@ module.exports = {
             }
         ]
     },
-    devtool: '#source-map',
-    plugins: [
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            minChunks: function (module, count) {
-                // any required modules inside node_modules are extracted to vendor
-                return (
-                    module.resource &&
-                    /\.js$/.test(module.resource) &&
-                    module.resource.indexOf(
-                        path.join(__dirname, '../node_modules')
-                    ) === 0
-                )
-            }
-        }),
-        new HtmlWebpackPlugin({
-            filename: 'view/index.html',
-            template: 'src/view/index.html',
-            inject: true,
-            minify: {
-                removeComments: true,
-                removeAttributeQuotes: true
-            }
-        }),
-        new extractTextWebpackPlugin({
-            filename: 'static/css/[name].[contenthash].css'
-        })
-    ]
+    devtool: '#source-map'
 }

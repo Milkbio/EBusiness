@@ -1,29 +1,45 @@
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const baseWebpackConfig = require('./webpack.config');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 
-module.exports = merge(baseWebpackConfig, {
+const baseWebpackConfig = require('./webpack.config');
+
+const devWebpackConfig = merge(baseWebpackConfig, {
     devtool: '#cheap-module-eval-source-map',
+    module: {
+        rules: [
+            {
+                test: /\.(css|less)$/,
+                loader: 'style-loader!css-loader!less-loader'
+            }
+        ]
+    },
     plugins: [
         // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
-        new FriendlyErrorsPlugin()
+        new FriendlyErrorsPlugin(),
+        new HtmlWebpackPlugin({
+            filename: 'view/index.html',
+            template: 'src/view/index.html',
+            inject: true
+        }),
     ],
     devServer: {
         clientLogLevel: 'warning',
-        hot: true,
         inline: true,
+        hot: true,
         compress: true,
         host: 'localhost',
         port: '8888',
         overlay: {warnings: false, errors: true},
         publicPath: '/',
         quiet: true,
-        stats: "errors-only",
-        contentBase: path.resolve(__dirname, 'dist/view')
+        stats: "errors-only"
     },
 });
+
+module.exports = devWebpackConfig;
