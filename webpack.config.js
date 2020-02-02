@@ -1,9 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const cleanWebpackPlugin = require('clean-webpack-plugin');
 const extractTextWebpackPlugin = require('extract-text-webpack-plugin');
-
 
 function resolve (dir) {
     return path.join(__dirname, dir);
@@ -58,7 +56,7 @@ module.exports = {
             }
         ]
     },
-    devtool: '#cheap-module-eval-source-map',
+    devtool: '#source-map',
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
@@ -82,7 +80,6 @@ module.exports = {
                 removeAttributeQuotes: true
             }
         }),
-        new cleanWebpackPlugin(['dist']),
         new extractTextWebpackPlugin({
             filename: 'static/css/[name].[contenthash].css'
         })
