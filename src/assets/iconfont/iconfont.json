@@ -1,0 +1,93 @@
+{
+  "id": "1625266",
+  "name": "电商平台",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "11372640",
+      "name": "编辑",
+      "font_class": "bianji",
+      "unicode": "e8ac",
+      "unicode_decimal": 59564
+    },
+    {
+      "icon_id": "11372643",
+      "name": "安全",
+      "font_class": "anquan",
+      "unicode": "e8ab",
+      "unicode_decimal": 59563
+    },
+    {
+      "icon_id": "11372644",
+      "name": "帮助",
+      "font_class": "bangzhu",
+      "unicode": "e8ad",
+      "unicode_decimal": 59565
+    },
+    {
+      "icon_id": "11372648",
+      "name": "成功",
+      "font_class": "chenggong",
+      "unicode": "e8ae",
+      "unicode_decimal": 59566
+    },
+    {
+      "icon_id": "11372650",
+      "name": "电话",
+      "font_class": "dianhua",
+      "unicode": "e8af",
+      "unicode_decimal": 59567
+    },
+    {
+      "icon_id": "11372651",
+      "name": "点赞",
+      "font_class": "dianzan",
+      "unicode": "e8b0",
+      "unicode_decimal": 59568
+    },
+    {
+      "icon_id": "11372652",
+      "name": "定位",
+      "font_class": "dingwei",
+      "unicode": "e8b1",
+      "unicode_decimal": 59569
+    },
+    {
+      "icon_id": "11372655",
+      "name": "地图",
+      "font_class": "ditu",
+      "unicode": "e8b2",
+      "unicode_decimal": 59570
+    },
+    {
+      "icon_id": "11372659",
+      "name": "更多",
+      "font_class": "gengduo",
+      "unicode": "e8b3",
+      "unicode_decimal": 59571
+    },
+    {
+      "icon_id": "11372661",
+      "name": "发现",
+      "font_class": "faxian",
+      "unicode": "e8b4",
+      "unicode_decimal": 59572
+    },
+    {
+      "icon_id": "11372665",
+      "name": "复制",
+      "font_class": "fuzhi",
+      "unicode": "e8b5",
+      "unicode_decimal": 59573
+    },
+    {
+      "icon_id": "11372666",
+      "name": "分享",
+      "font_class": "fenxiang",
+      "unicode": "e8b6",
+      "unicode_decimal": 59574
+    }
+  ]
+}
