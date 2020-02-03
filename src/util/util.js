@@ -1,4 +1,3 @@
-import $ from 'jquery'
 import qs from 'qs';
 import ArtTemplate from 'art-template/lib/template-web';
 
@@ -43,6 +42,16 @@ module.exports = {
     renderHTML: (htmlTemplate, data) => {
         const render = ArtTemplate.compile(htmlTemplate);
         return render(data);
+    },
+    // 字段的验证，支持是否为空，手机，邮箱
+    validate: (value, type) => {
+        const val = $.trim(value);
+        // 非空验证
+        if (type === 'require') return !!val
+        //手机号验证
+        if (type === 'phone') return /^1\d{10}$/.test(val);
+        // 邮箱验证
+        if (type === 'email') return /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(val);
     },
     // 统一登录处理
     toLogin: () => {
