@@ -1,1 +1,89 @@
-@color: #d9534f;
+/* Color
+-------------------------- */
+/// color|1|Brand Color|0
+@color-primary: #e50011;
+
+/// color|1|Background Color|4
+@color-white: #FFFFFF;
+
+/// color|1|Background Color|4
+@color-black: #000000;
+@color-primary-light-1: mix(@color-white, @color-primary, 10%); /* 53a8ff */
+@color-primary-light-2: mix(@color-white, @color-primary, 20%); /* 66b1ff */
+@color-primary-light-3: mix(@color-white, @color-primary, 30%); /* 79bbff */
+@color-primary-light-4: mix(@color-white, @color-primary, 40%); /* 8cc5ff */
+@color-primary-light-5: mix(@color-white, @color-primary, 50%); /* a0cfff */
+@color-primary-light-6: mix(@color-white, @color-primary, 60%); /* b3d8ff */
+@color-primary-light-7: mix(@color-white, @color-primary, 70%); /* c6e2ff */
+@color-primary-light-8: mix(@color-white, @color-primary, 80%); /* d9ecff */
+@color-primary-light-9: mix(@color-white, @color-primary, 90%); /* ecf5ff */
+
+/// color|1|Functional Color|1
+@color-success: #67C23A;
+/// color|1|Functional Color|1
+@color-warning: #E6A23C;
+/// color|1|Functional Color|1
+@color-danger: #F56C6C;
+/// color|1|Functional Color|1
+@color-info: #909399;
+
+@color-success-light: mix(@color-white, @color-success, 80%);
+@color-warning-light: mix(@color-white, @color-warning, 80%);
+@color-danger-light: mix(@color-white, @color-danger, 80%);
+@color-info-light: mix(@color-white, @color-info, 80%);
+
+@color-success-lighter: mix(@color-white, @color-success, 90%);
+@color-warning-lighter: mix(@color-white, @color-warning, 90%);
+@color-danger-lighter: mix(@color-white, @color-danger, 90%);
+@color-info-lighter: mix(@color-white, @color-info, 90%);
+/// color|1|Font Color|2
+@color-text-primary: #303133;
+/// color|1|Font Color|2
+@color-text-regular: #606266;
+/// color|1|Font Color|2
+@color-text-secondary: #909399;
+/// color|1|Font Color|2
+@color-text-placeholder: #C0C4CC;
+/// color|1|Border Color|3
+@border-color-base: #DCDFE6;
+/// color|1|Border Color|3
+@border-color-light: #E4E7ED;
+/// color|1|Border Color|3
+@border-color-lighter: #EBEEF5;
+/// color|1|Border Color|3
+@border-color-extra-light: #F2F6FC;
+
+// Background
+/// color|1|Background Color|4
+@background-color-base: #F5F7FA;
+@background-color-secondary: #EEEEEE;
+
+
+// Global text color on `<body>`.
+@text-color: @color-text-primary;
+
+// Global textual link color.
+@link-color: @color-primary-light-2;
+// Link hover color set via `darken()` function.
+@link-hover-color: darken(@link-color, 15%);
+
+
+//== Form states and alerts
+//
+//## Define colors for form feedback states and, by default, alerts.
+
+@state-success-text: #3c763d;
+@state-success-bg: #dff0d8;
+@state-success-border: darken(spin(@state-success-bg, -10), 5%);
+
+@state-info-text: #31708f;
+@state-info-bg: #d9edf7;
+@state-info-border: darken(spin(@state-info-bg, -10), 7%);
+
+@state-warning-text: #8a6d3b;
+@state-warning-bg: #fcf8e3;
+@state-warning-border: darken(spin(@state-warning-bg, -10), 5%);
+
+@state-danger-text: #a94442;
+@state-danger-bg: #f2dede;
+@state-danger-border: darken(spin(@state-danger-bg, -10), 5%);
