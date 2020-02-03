@@ -1,8 +1,22 @@
-@import "./utility.less";
+@import "./vars";
+@import "./typography";
+@import "./utility";
+@import "./theme/default";
 
+@import "./nav";
+html {
+  font-size: 14px;
+}
+a {
+  text-decoration: none;
+}
 .container {
   width: 1080px;
   position: relative;
   overflow: hidden;
   margin: 0 auto;
+  color: @text-color;
+}
+.link {
+  color: @link-color;
 }
