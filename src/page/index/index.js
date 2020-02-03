@@ -1,4 +1,5 @@
 import 'assets/js/common'
 import './index.less'
 
-console.log(11111111)
+import util from 'util/util';
+
