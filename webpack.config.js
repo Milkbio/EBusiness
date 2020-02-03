@@ -13,6 +13,9 @@ module.exports = {
         filename: "static/js/[name].js",
         // publicPath: '/'
     },
+    externals: {
+        'jquery' : 'window.jQuery'
+    },
     resolve: {
         extensions: ['.js', '.json'],
         modules: [
