@@ -44,7 +44,6 @@
   "dependencies": {
     "art-template": "^4.13.2",
     "jquery": "^3.4.1",
-    "qs": "^6.9.1",
-    "reset-css": "^5.0.1"
+    "qs": "^6.9.1"
   }
 }

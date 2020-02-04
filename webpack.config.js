@@ -11,7 +11,7 @@ module.exports = {
     output: {
         path: resolve('dist'),
         filename: "static/js/[name].js",
-        // publicPath: '/'
+        publicPath: '/'
     },
     externals: {
         'jquery' : 'window.jQuery'
