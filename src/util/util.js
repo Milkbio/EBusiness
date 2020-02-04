@@ -56,5 +56,9 @@ module.exports = {
     // 统一登录处理
     toLogin: () => {
         window.location.href = `./login.html?redirect=${encodeURIComponent(window.location.href)}`;
+    },
+    // 返回首页
+    goHome: () => {
+        window.location.href = `./index.html`
     }
 }
