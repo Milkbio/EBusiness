@@ -6,7 +6,7 @@ function resolve (dir) {
 
 module.exports = {
     entry: {
-        index: './src/page/index/index.js'
+        index: './src/page/index/js/index.js'
     },
     output: {
         path: resolve('dist'),

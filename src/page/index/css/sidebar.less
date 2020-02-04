@@ -1,0 +1,18 @@
+.sidebar {
+  float: left;
+  width: 130px;
+  font-size: 12px;
+  .sidebar-item {
+    height: 26px;
+    .link {
+      display: block;
+      height: 100%;
+      line-height: 26px;
+      color: darken(@color-muted, 20%);
+      &:hover {
+        text-decoration: underline;
+        color: @link-hover-color;
+      }
+    }
+  }
+}

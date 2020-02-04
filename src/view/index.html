@@ -7,6 +7,10 @@
 <body>
     <%= require('html-loader!./layout/nav.html')  %>
     <%= require('html-loader!./layout/header.html')  %>
+    <section class="body-content container">
+        <%= require('html-loader!./layout/sidebar.html')  %>
+        <div class="content side-collapsed">1111</div>
+    </section>
     <%= require('html-loader!./layout/foot.html')  %>
 </body>
 </html>
