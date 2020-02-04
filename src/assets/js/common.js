@@ -11,7 +11,9 @@ const header = {
     },
     onLoad() {
         const keyword = util.getUrlParam('keyword');
-        if (keyword) $('#topSearch').val(keyword);
+        if (keyword) {
+            $('#topSearch').val(keyword);
+        }
     },
     bindEvent() {
         $('#topSearchBtn').click(() => {
