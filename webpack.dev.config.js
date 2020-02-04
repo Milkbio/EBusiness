@@ -8,8 +8,6 @@ const portfinder = require('portfinder');
 
 const baseWebpackConfig = require('./webpack.config');
 
-// baseWebpackConfig.entry.index.unshift("webpack-dev-server/client?http://localhost:8080/");
-
 const devWebpackConfig = merge(baseWebpackConfig, {
     devtool: 'cheap-module-eval-source-map',
     module: {
