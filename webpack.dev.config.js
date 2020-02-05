@@ -8,6 +8,20 @@ const portfinder = require('portfinder');
 
 const baseWebpackConfig = require('./webpack.config');
 
+//  根据entry生成htmlWebpackPlugin配置
+const generateHtmlWebpack = () => {
+    const entries = Object.keys(baseWebpackConfig.entry);
+    return entries.map(entry => {
+        return new HtmlWebpackPlugin({
+            template: `src/view/${entry}.html`,
+            filename: `view/${entry}.html`,
+            inject: true,
+            hash: true,
+            trunks: ['manifest', 'vendor', 'common', entry]
+        })
+    })
+}
+
 const devWebpackConfig = merge(baseWebpackConfig, {
     devtool: 'cheap-module-eval-source-map',
     module: {
@@ -23,11 +37,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
         new webpack.NoEmitOnErrorsPlugin(),
-        new HtmlWebpackPlugin({
-            template: 'src/view/index.html',
-            filename: 'view/index.html',
-            inject: true
-        }),
+        ...generateHtmlWebpack(),
         // copy custom static assets
         new CopyWebpackPlugin([
             {
@@ -35,7 +45,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
                 to: 'static',
                 ignore: ['.*']
             }
-        ])
+        ]),
     ],
     devServer: {
         clientLogLevel: 'warning',
