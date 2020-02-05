@@ -1,14 +1,23 @@
 const path = require('path');
+const fs = require('fs');
 
 function resolve (dir) {
     return path.join(__dirname, dir);
 }
 
+const entry = () => {
+    const directory = path.resolve(__dirname, './src/page');
+    const files = fs.readdirSync(directory);
+
+    const entries = {};
+    files.forEach(file => {
+        entries[file] = `./src/page/${file}/index.js`;
+    });
+    return entries;
+}
+
 module.exports = {
-    entry: {
-        index: './src/page/index/index.js',
-        result: './src/page/result/index.js',
-    },
+    entry: entry(),
     output: {
         path: resolve('dist'),
         filename: "static/js/[name].js",
