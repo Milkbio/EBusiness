@@ -31,6 +31,7 @@ module.exports = merge(baseWebpackConfig, {
                 removeAttributeQuotes: true
             }
         }),
+        // 抽离第三方库
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
             minChunks: function (module, count) {
@@ -43,6 +44,16 @@ module.exports = merge(baseWebpackConfig, {
                     ) === 0
                 )
             }
+        }),
+        // extract webpack runtime and module manifest to its own file in order to
+        // prevent vendor hash from being updated whenever app bundle is updated
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'manifest',
+            chunks: ['vendor']
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'common',
+            chunks: Object.keys(baseWebpackConfig.entry)
         }),
         new cleanWebpackPlugin(['dist'])
     ]
