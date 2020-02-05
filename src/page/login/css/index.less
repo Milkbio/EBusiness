@@ -1,0 +1,58 @@
+@import "../../../assets/css/common";
+
+.body-content {
+  background: @color-primary-light-3;
+  overflow: hidden;
+}
+.form-sign {
+  width: 400px;
+  background: @background-color-third;
+  margin: 40px auto;
+  padding: 15px;
+  border-radius: 4px;
+  overflow: hidden;
+  .title {
+    text-align: center;
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid @color-info-light;
+  }
+  .form-group {
+    position: relative;
+    margin-bottom: 15px;
+    border: 1px solid @color-info-light;
+    .clearfix();
+    .control-label {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 36px;
+      height: 36px;
+      border-right: 1px solid @color-info-light;
+      background: @background-color-base;
+      text-align: center;
+      line-height: 36px;
+      color: @color-muted;
+    }
+    .form-control {
+      display: block;
+      border: 0;
+      width: 100%;
+      height: 36px;
+      padding: 0 10px 0 50px;
+      background: @background-color-third;
+    }
+  }
+  footer {
+    margin-top: 15px;
+    text-align: right;
+    .link {
+      margin-left: 10px;
+      font-size: 12px;
+      &:hover {
+        color: @link-hover-color;
+      }
+    }
+  }
+}
