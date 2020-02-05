@@ -13,6 +13,13 @@ html {
 }
 a {
   text-decoration: none;
+  &.link {
+    font-size: 12px;
+    &:hover {
+      color: @link-hover-color;
+      text-decoration: underline;
+    }
+  }
 }
 body {
   background: @background-color-base;
