@@ -11,15 +11,16 @@ const baseWebpackConfig = require('./webpack.config');
 //  根据entry生成htmlWebpackPlugin配置
 const generateHtmlWebpack = () => {
     const entries = Object.keys(baseWebpackConfig.entry);
-    return entries.map(entry => {
+    const arr = entries.map(entry => {
         return new HtmlWebpackPlugin({
             template: `src/view/${entry}.html`,
             filename: `view/${entry}.html`,
             inject: true,
             hash: true,
-            trunks: ['manifest', 'vendor', 'common', entry]
+            chunks: ['manifest', 'vendor', 'common', entry]
         })
-    })
+    });
+    return arr
 }
 
 const devWebpackConfig = merge(baseWebpackConfig, {
