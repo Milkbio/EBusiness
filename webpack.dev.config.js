@@ -6,6 +6,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const portfinder = require('portfinder');
 
+const proxy = require('./config/proxyConfig').proxyList;
+
 const baseWebpackConfig = require('./webpack.config');
 
 //  根据entry生成htmlWebpackPlugin配置
@@ -58,7 +60,8 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         overlay: {warnings: false, errors: true},
         // quiet: true,
         stats: "errors-only",
-        contentBase: './dist'
+        contentBase: './dist',
+        proxy
     },
 });
 
