@@ -100,7 +100,7 @@ const register = {
         if (validateRes.status && !this.isRegistered.status) {
             // 成功
             api.register(formData).then(res => {
-                util.linkTo(`./result.html?type=register`);
+                window.location.replace(`./result.html?type=register`);
             }).catch(err => {
                 this.renderError(err);
             });
