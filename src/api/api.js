@@ -5,8 +5,8 @@ export default {
     login(data) {
         return new Promise((resolve, reject) => {
             util.request({
-                type: 'POST',
-                url: util.getServerUrl('/user/get_user_info.do'),
+                method: 'POST',
+                url: util.getServerUrl('/api/user/get_user_info.do'),
                 data,
                 success: resolve,
                 error: reject
