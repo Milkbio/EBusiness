@@ -12,5 +12,32 @@ export default {
                 error: reject
             })
         });
-    }
+    },
+    // 检查用户名是否被注册
+    checkUsernameAvailable(username) {
+        return new Promise((resolve, reject) => {
+            util.request({
+                method: 'POST',
+                url: util.getServerUrl('/api/user/check_valid.do'),
+                data: {
+                    type: 'username',
+                    str: username
+                },
+                success: resolve,
+                error: reject
+            })
+        });
+    },
+    // 用户注册
+    register(data) {
+        return new Promise((resolve, reject) => {
+            util.request({
+                method: 'POST',
+                url: util.getServerUrl('/api/user/register.do'),
+                data,
+                success: resolve,
+                error: reject
+            })
+        });
+    },
 }

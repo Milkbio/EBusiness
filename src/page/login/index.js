@@ -31,10 +31,6 @@ const login = {
             result.msg = '密码不能为空';
             return result;
         };
-        if (!util.validate(formData.username, 'phone')) {
-            result.msg = '请输入正确手机号';
-            return result;
-        };
 
         result = {status: true, msg: '验证通过'};
         return result;
