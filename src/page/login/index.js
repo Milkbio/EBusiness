@@ -54,8 +54,8 @@ const login = {
         if (validateRes.status) {
             // 成功
             api.login(formData).then(res => {
-                const redirect = util.getServerUrl('redirect') || './index.html';
-                util.linkTo(redirect);
+                const redirect = util.getUrlParam('redirect') || './index.html';
+                window.location.replace(redirect);
             }).catch(err => {
                 this.renderError(err);
             });
