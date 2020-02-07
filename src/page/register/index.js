@@ -52,7 +52,7 @@ const register = {
             result.msg = '密码最少为6位';
             return result;
         };
-        if (formData.password !== formData.cfmPassword) {
+        if (formData.password !== formData.passwordConfirm) {
             result.msg = '两次输入的密码不一致';
             return result;
         };
@@ -60,7 +60,7 @@ const register = {
             result.msg = '请输入正确手机号';
             return result;
         };
-        if (!util.validate(formData.mail, 'email')) {
+        if (!util.validate(formData.email, 'email')) {
             result.msg = '邮箱格式不正确';
             return result;
         };
@@ -89,12 +89,12 @@ const register = {
     submit() {
         const username = $.trim($('#username').val());
         const password = $.trim($('#password').val());
-        const cfmPassword = $.trim($('#cfmPassword').val());
+        const passwordConfirm = $.trim($('#cfmPassword').val());
         const phone = $.trim($('#phone').val());
-        const mail = $.trim($('#mail').val());
+        const email = $.trim($('#mail').val());
         const question = $.trim($('#question').val());
         const answer = $.trim($('#answer').val());
-        const formData = {username, password, cfmPassword, phone, mail, question, answer};
+        const formData = {username, password, passwordConfirm, phone, email, question, answer};
 
         const validateRes = this.formValidate(formData);
         if (validateRes.status && !this.isRegistered.status) {
