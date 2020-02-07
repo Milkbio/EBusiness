@@ -54,6 +54,7 @@ const login = {
         if (validateRes.status) {
             // 成功
             api.login(formData).then(res => {
+                util.setLocalStorage('userInfo', res);
                 const redirect = util.getUrlParam('redirect') || './index.html';
                 window.location.replace(redirect);
             }).catch(err => {

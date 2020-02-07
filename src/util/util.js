@@ -63,5 +63,13 @@ module.exports = {
     },
     linkTo: (url) => {
         window.location.href = url
+    },
+    // localStorage存储
+    setLocalStorage(key, value) {
+        const data = typeof value === 'object' ? JSON.stringify(value) : value;
+        window.localStorage.setItem(key, data)
+    },
+    getLocalStorage(key) {
+        return JSON.parse(window.localStorage.getItem(key));
     }
 }
