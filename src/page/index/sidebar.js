@@ -5,7 +5,7 @@ const template = `
             <a href="{{value.href}}" class="link">{{value.desc}}</a>
         </li>
     {{/each}}
-`
+`;
 
 const sidebar = {
     option: {
