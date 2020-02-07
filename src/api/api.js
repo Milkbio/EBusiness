@@ -40,4 +40,15 @@ export default {
             })
         });
     },
+    // 检查用户是否登录
+    isUserLogin() {
+        return new Promise((resolve, reject) => {
+            util.request({
+                method: 'POST',
+                url: util.getServerUrl('/api/user/get_user_info.do'),
+                success: resolve,
+                error: reject
+            })
+        });
+    }
 }
