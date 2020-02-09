@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 function resolve (dir) {
     return path.join(__dirname, dir);
@@ -14,6 +15,21 @@ const entry = () => {
         entries[file] = `./src/page/${file}/index.js`;
     });
     return entries;
+};
+
+//  根据entry生成htmlWebpackPlugin配置
+const generateHtmlWebpack = () => {
+    const entries = Object.keys(entry());
+    const arr = entries.map(entry => {
+        return new HtmlWebpackPlugin({
+            template: `src/view/${entry}.html`,
+            filename: `view/${entry}.html`,
+            inject: true,
+            hash: true,
+            chunks: ['manifest', 'vendor', 'common', entry]
+        })
+    });
+    return arr
 }
 
 module.exports = {
@@ -61,5 +77,8 @@ module.exports = {
             }
         ]
     },
+    plugins: [
+        ...generateHtmlWebpack()
+    ],
     devtool: '#source-map'
 }

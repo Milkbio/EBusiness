@@ -2,28 +2,12 @@ const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const portfinder = require('portfinder');
 
 const proxy = require('./config/proxyConfig').proxyList;
 
 const baseWebpackConfig = require('./webpack.config');
-
-//  根据entry生成htmlWebpackPlugin配置
-const generateHtmlWebpack = () => {
-    const entries = Object.keys(baseWebpackConfig.entry);
-    const arr = entries.map(entry => {
-        return new HtmlWebpackPlugin({
-            template: `src/view/${entry}.html`,
-            filename: `view/${entry}.html`,
-            inject: true,
-            hash: true,
-            chunks: ['manifest', 'vendor', 'common', entry]
-        })
-    });
-    return arr
-}
 
 const devWebpackConfig = merge(baseWebpackConfig, {
     mode: 'development',
@@ -41,7 +25,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
         new webpack.NoEmitOnErrorsPlugin(),
-        ...generateHtmlWebpack(),
         // copy custom static assets
         new CopyWebpackPlugin([
             {
