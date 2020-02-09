@@ -50,6 +50,9 @@ const devWebpackConfig = merge(baseWebpackConfig, {
             }
         ]),
     ],
+    optimization: {
+        usedExports: true
+    },
     devServer: {
         clientLogLevel: 'warning',
         inline: true,
