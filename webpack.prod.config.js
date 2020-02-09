@@ -2,7 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const cleanWebpackPlugin = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const extractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const baseWebpackConfig = require('./webpack.config');
 
@@ -23,15 +22,6 @@ module.exports = merge(baseWebpackConfig, {
     plugins: [
         new extractTextWebpackPlugin({
             filename: 'static/css/[name].[contenthash].css'
-        }),
-        new HtmlWebpackPlugin({
-            filename: 'view/index.html',
-            template: 'src/view/index.html',
-            inject: true,
-            minify: {
-                removeComments: true,
-                removeAttributeQuotes: true
-            }
         }),
         // 抽离第三方库
         new webpack.optimize.CommonsChunkPlugin({
