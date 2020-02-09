@@ -7,6 +7,8 @@ const extractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const baseWebpackConfig = require('./webpack.config');
 
 module.exports = merge(baseWebpackConfig, {
+    mode: 'production',
+    devtool: 'source-map',
     module: {
         rules: [
             {
