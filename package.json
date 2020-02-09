@@ -11,7 +11,7 @@
   "sideEffects": [
     "*.css",
     "*.less",
-    "*.scss",
+    "*.scss"
   ],
   "repository": {
     "type": "git",
