@@ -43,7 +43,7 @@ module.exports = merge(baseWebpackConfig, {
     },
     plugins: [
         new extractTextWebpackPlugin({
-            filename: 'static/css/[name].[contenthash].css'
+            filename: 'static/css/[name].[md5:contenthash:hex:8].css'
         }),
         // 抽离第三方库
         /*new webpack.optimize.CommonsChunkPlugin({
