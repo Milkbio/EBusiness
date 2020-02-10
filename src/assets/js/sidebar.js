@@ -1,4 +1,4 @@
-import util from 'util/util'
+import util from 'util/util';
 const template = `
     {{each navList value i}}
         <li class="{{value.isActive ? 'sidebar-item active' : 'sidebar-item'}}">
