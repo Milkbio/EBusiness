@@ -1,0 +1,21 @@
+.breadcrumb {
+  margin: 10px 0 20px;
+  padding: 12px 0;
+  background: @background-color-secondary;
+  border-top: 2px solid @color-primary;
+  .list {
+    li {
+      display: inline-block;
+      &.current {
+        color: @color-text-primary;
+      }
+      &:not(:last-child):after {
+        content: '\e775';
+        font-family: 'iconfont';
+        font-style: normal;
+        color: @color-info;
+        margin: 0 5px;
+      }
+    }
+  }
+}

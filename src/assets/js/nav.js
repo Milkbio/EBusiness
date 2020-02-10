@@ -9,7 +9,7 @@ const template = `
             {{/if}}
             {{else}}
             <span class="not-login" hidden>
-                <span>欢迎，<a href="./user-center.html" class="text-primary">{{username}}</a></span>
+                <span>欢迎，<a href="./userCenter.html" class="text-primary">{{username}}</a></span>
                 <a class="text-muted" href="./index.html" id="logout">退出</a>
             </span>
             {{/else}}

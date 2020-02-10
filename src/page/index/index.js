@@ -1,8 +1,8 @@
 import 'assets/js/common'
 import './css/index.less'
 
-import './nav';
-import './header';
-import './sidebar';
+import 'assets/js/nav';
+import 'assets/js/header';
+import 'assets/js/sidebar';
 
 
