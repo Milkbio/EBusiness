@@ -16,7 +16,9 @@ const userCenter = {
         this.loadUserInfo();
     },
     loadUserInfo() {
+        api.getUserInfo().then(res => {
 
+        })
     }
 };
 userCenter.init();

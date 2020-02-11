@@ -40,12 +40,12 @@ export default {
             })
         });
     },
-    // 检查用户是否登录
-    isUserLogin() {
+    // 获取用户信息
+    getUserInfo() {
         return new Promise((resolve, reject) => {
             util.request({
                 method: 'POST',
-                url: util.getServerUrl('/api/user/get_user_info.do'),
+                url: util.getServerUrl('/api/user/get_information.do'),
                 success: resolve,
                 error: reject
             })
