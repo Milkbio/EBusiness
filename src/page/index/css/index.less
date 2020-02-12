@@ -2,7 +2,37 @@
 @import "../../../assets/css/header";
 @import "../../../assets/css/sidebar";
 
-.content {
-  float: left;
-  width: 950px;
+.fs {
+  .fs-col1, .fs-col2 {
+    float: left;
+    height: 350px;
+  }
+  .fs-col1 {
+    width: 240px;
+    padding: 10px 0;
+    margin-right: 10px;
+    background: @background-color-forth;
+    .item {
+      padding:0 10px;
+      height: 25px;
+      line-height: 25px;
+      &:hover {
+        background: lighten(@background-color-forth, 20%);
+      }
+      .link {
+        color: @color-white;
+        &:hover {
+          color: @link-hover-color;
+        }
+      }
+    }
+  }
+  .fs-col2 {
+    width: 830px;
+    background: @background-color-secondary;
+    .icon-loading {
+      margin: 150px 390px;
+    }
+  }
 }
+
