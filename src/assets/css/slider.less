@@ -39,4 +39,29 @@
       }
     }
   }
+  .left-arrow-box, .right-arrow-box {
+    position: absolute;
+    padding: 10px;
+    border-radius: 50%;
+    top: 50%;
+    transform: translate(0, -50%);
+    background: rgba(0, 0, 0, .5);
+    opacity: .2;
+    color: @color-white;
+    cursor: pointer;
+    transition: all ease .4s;
+    &:hover {
+      transform: translate(0, -50%) scale(1.4);
+      opacity: .8;
+    }
+    .iconfont {
+      font-size: 20px;
+    }
+  }
+  .left-arrow-box {
+    left: 30px;
+  }
+  .right-arrow-box {
+    right: 30px;
+  }
 }
