@@ -1,6 +1,7 @@
 @import "../../../assets/css/common";
 @import "../../../assets/css/header";
 @import "../../../assets/css/sidebar";
+@import "../../../assets/css/slider";
 
 .fs {
   .fs-col1, .fs-col2 {
@@ -28,10 +29,13 @@
     }
   }
   .fs-col2 {
+    position: relative;
     width: 830px;
     background: @background-color-secondary;
     .icon-loading {
-      margin: 150px 390px;
+      position: absolute;
+      top: 150px;
+      left: 390px;
     }
   }
 }
