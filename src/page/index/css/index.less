@@ -36,3 +36,40 @@
   }
 }
 
+.floor {
+  .floor-title {
+    height: 50px;
+    margin: 0;
+    border-bottom: 2px solid @color-warning;
+    line-height: 50px;
+    color: @color-warning;
+    font-size: 18px;
+    font-weight: normal;
+  }
+  .floor-list {
+    margin-right: -20px;
+    .floor-item {
+      float: left;
+      position: relative;
+      width: 200px;
+      height: 220px;
+      margin: 15px 20px 15px 0;
+      cursor: pointer;
+      background: @background-color-third;
+      .floor-text {
+        position: absolute;
+        top: 12px;
+        left: 20px;
+        font-size: 16px;
+        color: darken(@color-muted, 16%);
+      }
+      .floor-img {
+        position: absolute;
+        bottom: 10px;
+        left: 20px;
+        width: 160px;
+      }
+    }
+  }
+}
+
