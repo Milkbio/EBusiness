@@ -45,7 +45,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         host: 'localhost',
         port: 8088,
         overlay: {warnings: false, errors: true},
-        // quiet: true,
+        quiet: true,
         stats: "errors-only",
         contentBase: './dist',
         proxy
