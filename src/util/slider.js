@@ -18,6 +18,7 @@ class Slider {
         this.generateIndicator();
         this.generateArrows();
         this.move();
+        this.el.hover(() => clearInterval(this.timer), () => this.move());
         this.resolveException();
     }
     // 处理切换窗口时定时器的异常

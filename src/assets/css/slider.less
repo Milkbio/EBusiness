@@ -3,6 +3,12 @@
   height: 100%;
   overflow: hidden;
   position: relative;
+  &:hover {
+    .left-arrow-box, .right-arrow-box {
+      transform: translate(0, -50%) scale(1.4);
+      opacity: .8;
+    }
+  }
   .slider {
     height: 100%;
     .slide-item {
@@ -50,10 +56,6 @@
     color: @color-white;
     cursor: pointer;
     transition: all ease .4s;
-    &:hover {
-      transform: translate(0, -50%) scale(1.4);
-      opacity: .8;
-    }
     .iconfont {
       font-size: 20px;
     }
