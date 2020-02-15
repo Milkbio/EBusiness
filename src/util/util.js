@@ -19,11 +19,11 @@ module.exports = {
             data: param.data || '',
             success: res => {
                 if (res.code === 0) { // 请求成功
-                    typeof param.success === 'function' && param.success(res.data, res.msg);
+                    typeof param.success === 'function' && param.success(res.data, res.message);
                 } else if (res.code === 10) { // 无权限，需要登录
                     this.toLogin()
                 } else if (res.code === -1) { // 错误
-                    typeof param.error === 'function' && param.error(res.msg);
+                    typeof param.error === 'function' && param.error(res.message);
                 }
             },
             error: err => {
