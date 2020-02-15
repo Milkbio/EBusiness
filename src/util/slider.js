@@ -1,5 +1,5 @@
 class Slider {
-    constructor (options) {
+    constructor(options) {
         this.el = $(options.el); // 根节点
         this.speed = options.speed || 1200;
         this.slider = this.el.find('.slider'); // 轮播的节点
@@ -11,7 +11,8 @@ class Slider {
         this.init();
         options.callback && options.callback();
     }
-    init () {
+
+    init() {
         const num = this.slideItems.length;
         this.slideItems.width(this.slideWidth);
         this.slider.width(num * this.slideWidth);
@@ -21,6 +22,7 @@ class Slider {
         this.el.hover(() => clearInterval(this.timer), () => this.move());
         this.resolveException();
     }
+
     // 处理切换窗口时定时器的异常
     resolveException() {
         $(document).on('visibilitychange', () => {
@@ -31,6 +33,7 @@ class Slider {
             }
         })
     }
+
     // 根据slide的数量生成相应数量的底部小圆点，并绑定事件
     generateIndicator() {
         this.indicatorBox = $('<div class="indicator-box">');
@@ -46,25 +49,29 @@ class Slider {
         this.indicatorBox.append(indicatorWrap);
         this.el.append(this.indicatorBox)
     }
+
     indicatorClickFn(e) {
         const index = $(e.target).index();
         this.index = index;
         this.moveFn(index);
     }
+
     leftArrowClickFn(e) {
         this.index--;
-        if (this.index <= 0 ) {
+        if (this.index <= 0) {
             this.index = this.slideItems.length - 1;
         }
         this.moveFn(this.index);
     }
+
     rightArrowClickFn(e) {
         this.index++;
-        if (this.index >= this.slideItems.length ) {
+        if (this.index >= this.slideItems.length) {
             this.index = 0;
         }
         this.moveFn(this.index);
     }
+
     // 生成左右箭头，并绑定事件
     generateArrows() {
         const leftArrowBox = $('<div class="left-arrow-box">');
@@ -80,6 +87,7 @@ class Slider {
         this.el.append(leftArrowBox);
         this.el.append(rightArrowBox);
     }
+
     moveFn(index) {
         this.indicatorBox.find('.indicator').removeClass('active');
         this.indicatorBox.find('.indicator').eq(index).addClass('active');
@@ -88,10 +96,11 @@ class Slider {
             800
         );
     }
+
     move() {
         this.timer = setInterval(() => {
             this.index++;
-            if (this.index >= this.slideItems.length ) {
+            if (this.index >= this.slideItems.length) {
                 this.index = 0;
             }
             this.moveFn(this.index);

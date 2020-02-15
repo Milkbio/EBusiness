@@ -2,7 +2,7 @@ import qs from 'qs';
 import ArtTemplate from 'art-template/lib/template-web';
 
 const config = {
-  serverHost: ''
+    serverHost: ''
 };
 
 module.exports = {
@@ -35,7 +35,7 @@ module.exports = {
     getServerUrl: path => config.serverHost + path,
     // 获取url参数
     getUrlParam: name => {
-        const data = qs.parse(window.location.search, { ignoreQueryPrefix: true });
+        const data = qs.parse(window.location.search, {ignoreQueryPrefix: true});
         return data[name];
     },
     /**

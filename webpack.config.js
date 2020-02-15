@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-function resolve (dir) {
+function resolve(dir) {
     return path.join(__dirname, dir);
 }
 
@@ -40,7 +40,7 @@ module.exports = {
         publicPath: '/'
     },
     externals: {
-        'jquery' : 'window.jQuery'
+        'jquery': 'window.jQuery'
     },
     resolve: {
         extensions: ['.js', '.json'],

@@ -1,4 +1,5 @@
 import util from 'util/util';
+
 const template = `
     {{each navList value i}}
         <li class="{{value.isActive ? 'sidebar-item active' : 'sidebar-item'}}">
@@ -28,8 +29,10 @@ const sidebar = {
         for (let i = 0; i < length; i++) {
             if (navList[i].name.indexOf(match[1]) > -1) {
                 navList[i].isActive = true;
-            };
-        };
+            }
+            ;
+        }
+        ;
         // 渲染list数据
         const html = util.renderHTML(template, this.option);
         $('.sidebar').html(html);

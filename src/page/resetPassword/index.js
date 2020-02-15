@@ -26,11 +26,13 @@ const resetPassword = {
         if (!util.validate(formData.username, 'require')) {
             result.msg = '用户名不能为空';
             return result;
-        };
+        }
+        ;
         if (!util.validate(formData.password, 'require')) {
             result.msg = '密码不能为空';
             return result;
-        };
+        }
+        ;
 
         result = {status: true, msg: '验证通过'};
         return result;

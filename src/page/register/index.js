@@ -18,7 +18,7 @@ const register = {
             this.submit();
         });
         // 失去焦点进行验证
-        $('#username').blur(e =>{
+        $('#username').blur(e => {
             const username = $.trim($(e.target).val());
             if (username) {
                 api.checkUsernameAvailable(username).then(res => {
@@ -35,7 +35,8 @@ const register = {
                     };
                     this.renderError(err);
                 });
-            };
+            }
+            ;
         })
     },
     //表单验证
@@ -47,31 +48,38 @@ const register = {
         if (!util.validate(formData.username, 'require')) {
             result.msg = '用户名不能为空';
             return result;
-        };
+        }
+        ;
         if (formData.password.length < 6) {
             result.msg = '密码最少为6位';
             return result;
-        };
+        }
+        ;
         if (formData.password !== formData.passwordConfirm) {
             result.msg = '两次输入的密码不一致';
             return result;
-        };
+        }
+        ;
         if (!util.validate(formData.phone, 'phone')) {
             result.msg = '请输入正确手机号';
             return result;
-        };
+        }
+        ;
         if (!util.validate(formData.email, 'email')) {
             result.msg = '邮箱格式不正确';
             return result;
-        };
+        }
+        ;
         if (!util.validate(formData.question, 'require')) {
             result.msg = '问题不能为空';
             return result;
-        };
+        }
+        ;
         if (!util.validate(formData.answer, 'require')) {
             result.msg = '答案不能为空';
             return result;
-        };
+        }
+        ;
         result = {status: true, msg: '验证通过'};
         return result;
     },
