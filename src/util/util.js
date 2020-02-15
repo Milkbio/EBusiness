@@ -12,16 +12,17 @@ module.exports = {
             type: param.method || 'GET',
             url: param.url || '',
             dataType: param.type || 'json',
+            contentType: 'application/json',
             xhrFields: {
                 withCredentials: true    // 要在这里设置上传cookie
             },
             data: param.data || '',
             success: res => {
-                if (res.status === 0) { // 请求成功
+                if (res.code === 0) { // 请求成功
                     typeof param.success === 'function' && param.success(res.data, res.msg);
-                } else if (res.status === 10) { // 无权限，需要登录
+                } else if (res.code === 10) { // 无权限，需要登录
                     this.toLogin()
-                } else if (res.status === 1) { // 错误
+                } else if (res.code === -1) { // 错误
                     typeof param.error === 'function' && param.error(res.msg);
                 }
             },
