@@ -6,7 +6,7 @@ export default {
         return new Promise((resolve, reject) => {
             util.request({
                 method: 'POST',
-                url: util.getServerUrl('/api/user/login.do'),
+                url: util.getServerUrl('/api/user/login'),
                 data,
                 success: resolve,
                 error: reject
@@ -18,7 +18,7 @@ export default {
         return new Promise((resolve, reject) => {
             util.request({
                 method: 'POST',
-                url: util.getServerUrl('/api/user/check_valid.do'),
+                url: util.getServerUrl('/api/user/check_valid'),
                 data: {
                     type: 'username',
                     str: username
@@ -33,7 +33,7 @@ export default {
         return new Promise((resolve, reject) => {
             util.request({
                 method: 'POST',
-                url: util.getServerUrl('/api/user/register.do'),
+                url: util.getServerUrl('/api/user/register'),
                 data,
                 success: resolve,
                 error: reject
@@ -45,7 +45,7 @@ export default {
         return new Promise((resolve, reject) => {
             util.request({
                 method: 'POST',
-                url: util.getServerUrl('/api/user/get_information.do'),
+                url: util.getServerUrl('/api/user/get_information'),
                 success: resolve,
                 error: reject
             })
