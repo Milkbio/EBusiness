@@ -58,7 +58,6 @@ const login = {
                 const redirect = util.getUrlParam('redirect') || './index.html';
                 window.location.replace(redirect);
             }).catch(err => {
-                debugger
                 this.renderError(err);
             });
         } else {
