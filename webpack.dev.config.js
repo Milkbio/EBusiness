@@ -49,7 +49,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     quiet: true,
     stats: "errors-only",
     contentBase: './dist',
-    // proxy
+    proxy
   },
 });
 
