@@ -1,65 +1,65 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <%= require('html-loader!./layout/head.html') %>
-    <title>EBusiness</title>
+  <%= require('html-loader!./layout/head.html') %>
+  <title>EBusiness</title>
 </head>
 <body>
 <%= require('html-loader!./layout/nav-simple.html') %>
 <section class="body-content">
-    <form action="" class="form-sign">
-        <h3 class="title">用户注册</h3>
-        <div class="error-msg" hidden>
-            <i class="iconfont icon-tishifill"></i>
-            <span id="errMsg">有错误</span>
-        </div>
-        <div class="form-group">
-            <label for="username" class="control-label">
-                <span class="iconfont icon-yonghu"></span>
-            </label>
-            <input type="text" class="form-control input-username" id="username" placeholder="请输入用户名">
-        </div>
-        <div class="form-group">
-            <label for="password" class="control-label">
-                <span class="iconfont icon-tequanzhuanshu"></span>
-            </label>
-            <input type="password" class="form-control input-password" id="password" placeholder="请输入密码">
-        </div>
-        <div class="form-group">
-            <label for="cfmPassword" class="control-label">
-                <span class="iconfont icon-tequanzhuanshu"></span>
-            </label>
-            <input type="password" class="form-control input-password" id="cfmPassword" placeholder="请再次输入密码">
-        </div>
-        <div class="form-group">
-            <label for="phone" class="control-label">
-                <span class="iconfont icon-dianhua"></span>
-            </label>
-            <input type="text" class="form-control input-phone" id="phone" placeholder="请输入手机号">
-        </div>
-        <div class="form-group">
-            <label for="mail" class="control-label">
-                <span class="iconfont icon-guojiwuliu"></span>
-            </label>
-            <input type="text" class="form-control input-mail" id="mail" placeholder="请输入邮箱">
-        </div>
-        <div class="form-group">
-            <label for="question" class="control-label">
-                <span class="iconfont icon-wenhao"></span>
-            </label>
-            <input type="text" class="form-control input-question" id="question" placeholder="请输入密码提示问题">
-        </div>
-        <div class="form-group">
-            <label for="answer" class="control-label">
-                <span class="iconfont icon-tishi"></span>
-            </label>
-            <input type="text" class="form-control input-answer" id="answer" placeholder="请输入密码提示问题答案">
-        </div>
-        <button class="btn btn-block btn-primary btn-sign" type="button" id="register">立即注册</button>
-        <footer>
-            <a href="./login.html" class="text-info link">已有账号，去登录>></a>
-        </footer>
-    </form>
+  <form action="" class="form-sign">
+    <h3 class="title">用户注册</h3>
+    <div class="error-msg" hidden>
+      <i class="iconfont icon-tishifill"></i>
+      <span id="errMsg">有错误</span>
+    </div>
+    <div class="form-group">
+      <label for="username" class="control-label">
+        <span class="iconfont icon-yonghu"></span>
+      </label>
+      <input type="text" class="form-control input-username" id="username" placeholder="请输入用户名">
+    </div>
+    <div class="form-group">
+      <label for="password" class="control-label">
+        <span class="iconfont icon-tequanzhuanshu"></span>
+      </label>
+      <input type="password" class="form-control input-password" id="password" placeholder="请输入密码">
+    </div>
+    <div class="form-group">
+      <label for="cfmPassword" class="control-label">
+        <span class="iconfont icon-tequanzhuanshu"></span>
+      </label>
+      <input type="password" class="form-control input-password" id="cfmPassword" placeholder="请再次输入密码">
+    </div>
+    <div class="form-group">
+      <label for="phone" class="control-label">
+        <span class="iconfont icon-dianhua"></span>
+      </label>
+      <input type="text" class="form-control input-phone" id="phone" placeholder="请输入手机号">
+    </div>
+    <div class="form-group">
+      <label for="mail" class="control-label">
+        <span class="iconfont icon-guojiwuliu"></span>
+      </label>
+      <input type="text" class="form-control input-mail" id="mail" placeholder="请输入邮箱">
+    </div>
+    <div class="form-group">
+      <label for="question" class="control-label">
+        <span class="iconfont icon-wenhao"></span>
+      </label>
+      <input type="text" class="form-control input-question" id="question" placeholder="请输入密码提示问题">
+    </div>
+    <div class="form-group">
+      <label for="answer" class="control-label">
+        <span class="iconfont icon-tishi"></span>
+      </label>
+      <input type="text" class="form-control input-answer" id="answer" placeholder="请输入密码提示问题答案">
+    </div>
+    <button class="btn btn-block btn-primary btn-sign" type="button" id="register">立即注册</button>
+    <footer>
+      <a href="./login.html" class="text-info link">已有账号，去登录>></a>
+    </footer>
+  </form>
 </section>
 <%= require('html-loader!./layout/foot.html') %>
 </body>

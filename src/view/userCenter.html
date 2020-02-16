@@ -1,34 +1,34 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <%= require('html-loader!./layout/head.html') %>
-    <title>EBusiness</title>
+  <%= require('html-loader!./layout/head.html') %>
+  <title>EBusiness</title>
 </head>
 <body>
 <%= require('html-loader!./layout/nav.html') %>
 <%= require('html-loader!./layout/header.html') %>
 <%= require('html-loader!./layout/breadcrumb.html') %>
 <section class="body-content container">
-    <%= require('html-loader!./layout/sidebar.html') %>
-    <div class="content side-collapsed">
-        <div class="panel">
-            <div class="panel-heading">
-                个人中心
-            </div>
-            <div class="panel-body">
-                <div id="infoBox">
-                    <p>用户名：<span id="username">xxx</span></p>
-                    <p>电话：<span id="phone">xxx</span></p>
-                    <p>邮箱：<span id="email">xxx</span></p>
-                    <p>问题：<span id="question">xxx</span></p>
-                    <p>答案：<span id="answer">xxx</span></p>
-                    <p>
-                        <input type="button" value="编辑" class="btn btn-primary btn-edit"/>
-                    </p>
-                </div>
-            </div>
+  <%= require('html-loader!./layout/sidebar.html') %>
+  <div class="content side-collapsed">
+    <div class="panel">
+      <div class="panel-heading">
+        个人中心
+      </div>
+      <div class="panel-body">
+        <div id="infoBox">
+          <p>用户名：<span id="username">xxx</span></p>
+          <p>电话：<span id="phone">xxx</span></p>
+          <p>邮箱：<span id="email">xxx</span></p>
+          <p>问题：<span id="question">xxx</span></p>
+          <p>答案：<span id="answer">xxx</span></p>
+          <p>
+            <input type="button" value="编辑" class="btn btn-primary btn-edit"/>
+          </p>
         </div>
+      </div>
     </div>
+  </div>
 </section>
 <%= require('html-loader!./layout/foot.html') %>
 </body>
