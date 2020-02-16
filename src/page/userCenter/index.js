@@ -9,17 +9,17 @@ import util from 'util/util';
 import api from 'api/api';
 
 const userCenter = {
-    init() {
-        this.onLoad()
-    },
-    onLoad() {
-        this.loadUserInfo();
-    },
-    loadUserInfo() {
-        api.getUserInfo().then(res => {
+  init() {
+    this.onLoad()
+  },
+  onLoad() {
+    this.loadUserInfo();
+  },
+  loadUserInfo() {
+    api.getUserInfo().then(res => {
 
-        })
-    }
+    })
+  }
 };
 userCenter.init();
 

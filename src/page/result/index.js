@@ -6,6 +6,6 @@ import util from 'util/util';
 
 const type = util.getUrlParam('type');
 const config = {
-    register: '注册',
+  register: '注册',
 }
 $('#type').text(config[type]);
