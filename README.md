@@ -14,3 +14,5 @@ start nginx 进入nginx目录启动nginx，nginx端口8080
 http://localhost:8080/view/login.html
 ```
 
+也可通过devServer proxy
+
