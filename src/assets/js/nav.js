@@ -16,18 +16,18 @@ const template = `
 `;
 
 const nav = {
-    init() {
-        this.onLoad();
-        this.bindEvent();
-    },
-    onLoad() {
-        // 渲染左上角
-        /*const html = util.renderHTML(template, this.option);
-        $('#topNavLeft').html(html);*/
-    },
-    bindEvent() {
+  init() {
+    this.onLoad();
+    this.bindEvent();
+  },
+  onLoad() {
+    // 渲染左上角
+    /*const html = util.renderHTML(template, this.option);
+    $('#topNavLeft').html(html);*/
+  },
+  bindEvent() {
 
-    }
+  }
 };
 
 nav.init();
