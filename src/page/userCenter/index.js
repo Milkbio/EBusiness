@@ -17,7 +17,11 @@ const userCenter = {
   },
   loadUserInfo() {
     api.getUserInfo().then(res => {
-
+      $('#username').text(res.username);
+      $('#phone').text(res.phone);
+      $('#email').text(res.email);
+      $('#question').text(res.question);
+      $('#answer').text(res.answer);
     })
   }
 };
