@@ -16,7 +16,7 @@ module.exports = {
       xhrFields: {
         withCredentials: true    // 要在这里设置上传cookie
       },
-      data: param.data || '',
+      data: JSON.stringify(param.data) || '',
       success: res => {
         if (res.code === 0) { // 请求成功
           typeof param.success === 'function' && param.success(res.data, res.message);
