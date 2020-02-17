@@ -74,6 +74,11 @@ module.exports = {
     window.localStorage.setItem(key, data)
   },
   getLocalStorage(key) {
-    return JSON.parse(window.localStorage.getItem(key));
+    try {
+      const item = window.localStorage.getItem(key);
+      return JSON.parse(item);
+    } catch (e) {
+      return;
+    }
   }
-}
+};
